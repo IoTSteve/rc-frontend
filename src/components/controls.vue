@@ -55,8 +55,7 @@ export default {
   },
   methods: {
     go() {
-      this.$socket.emit('control-left', 100);
-      this.$socket.emit('control-right', 100);
+      this.$socket.emit('driveForward', 100);
     },
     back() {
       /*
@@ -65,16 +64,13 @@ export default {
       */
     },
     stop() {
-      this.$socket.emit('control-left', 0);
-      this.$socket.emit('control-right', 0);
+      this.$socket.emit('Stop', 0);
     },
     turnLeft() {
-      this.$socket.emit('control-left', 100);
-      this.$socket.emit('control-right', -100);
+      this.$socket.emit('left', 100);
     },
     turnRight() {
-      this.$socket.emit('control-left', -100);
-      this.$socket.emit('control-right', 100);
+      this.$socket.emit('right', -100);
     },
     shutdown() {
       // this.$socket.emit('system', 'shutdown');
